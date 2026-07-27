@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="The Cascadia Journal design system, including its OKLCH color palette, fluid typography, and spacing scale."
+    >
+
+    <title>Week 02 Design System | The Cascadia Journal</title>
+
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="site-header__content">
+            <a class="back-link" href="../">
+                &larr; All milestones
+            </a>
+
+            <p class="eyebrow">Week 02 Design System</p>
+
+            <h1>The Cascadia Journal</h1>
+
+            <p class="introduction">
+                A warm editorial design system for a travel publication
+                exploring Seattle and the surrounding Pacific Northwest.
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <section class="token-section" aria-labelledby="colors-heading">
+            <div class="section-heading">
+                <p class="section-number">01</p>
+                <h2 id="colors-heading">Perceptual Color</h2>
+
+                <p>
+                    The palette uses OKLCH so that lightness and color
+                    intensity can be adjusted more predictably than with
+                    traditional hexadecimal colors.
+                </p>
+            </div>
+
+            <div class="color-grid">
+                <article class="color-card">
+                    <div class="color-sample color-sample--primary"></div>
+
+                    <div class="color-information">
+                        <h3>Primary</h3>
+                        <code>oklch(51% 0.12 42)</code>
+
+                        <p>
+                            A warm terracotta color used for links,
+                            highlights, and editorial accents.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="color-card">
+                    <div class="color-sample color-sample--secondary"></div>
+
+                    <div class="color-information">
+                        <h3>Secondary</h3>
+                        <code>oklch(42% 0.07 145)</code>
+
+                        <p>
+                            A subdued evergreen inspired by the forests
+                            surrounding the Puget Sound.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="color-card">
+                    <div class="color-sample color-sample--background"></div>
+
+                    <div class="color-information">
+                        <h3>Background</h3>
+                        <code>oklch(97% 0.02 85)</code>
+
+                        <p>
+                            A warm paper-like background for the light
+                            color scheme.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="color-card">
+                    <div class="color-sample color-sample--text"></div>
+
+                    <div class="color-information">
+                        <h3>Text</h3>
+                        <code>oklch(25% 0.035 45)</code>
+
+                        <p>
+                            A dark warm brown that provides strong
+                            contrast against the light background.
+                        </p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="contrast-example">
+                <h3>Contrast Demonstration</h3>
+
+                <p>
+                    This text uses the main text color against the main
+                    background color. The large lightness difference
+                    creates clear, readable contrast.
+                </p>
+
+                <p class="contrast-result">
+                    Approximate light-mode contrast ratio: 14.8:1
+                </p>
+            </div>
+        </section>
+
+        <section class="token-section" aria-labelledby="typography-heading">
+            <div class="section-heading">
+                <p class="section-number">02</p>
+                <h2 id="typography-heading">Fluid Typography</h2>
+
+                <p>
+                    The typography grows smoothly as the viewport becomes
+                    wider while maintaining accessible minimum and
+                    maximum font sizes.
+                </p>
+            </div>
+
+            <div class="type-specimens">
+                <article class="type-specimen">
+                    <p class="token-label">
+                        --size-heading-lg
+                    </p>
+
+                    <p class="heading-lg-example">
+                        Journeys through the Pacific Northwest
+                    </p>
+
+                    <code>
+                        clamp(1.75rem, 1.31rem + 1.88vw, 3rem)
+                    </code>
+                </article>
+
+                <article class="type-specimen">
+                    <p class="token-label">
+                        --size-heading-md
+                    </p>
+
+                    <p class="heading-md-example">
+                        Weekend destinations near Seattle
+                    </p>
+
+                    <code>
+                        clamp(1.35rem, 1.16rem + 0.82vw, 2rem)
+                    </code>
+                </article>
+
+                <article class="type-specimen">
+                    <p class="token-label">
+                        --size-base
+                    </p>
+
+                    <p class="base-example">
+                        From quiet island communities to mountain trails,
+                        this journal collects stories from destinations
+                        throughout the region.
+                    </p>
+
+                    <code>1rem</code>
+                </article>
+            </div>
+        </section>
+
+        <section class="token-section" aria-labelledby="spacing-heading">
+            <div class="section-heading">
+                <p class="section-number">03</p>
+                <h2 id="spacing-heading">Spacing Constants</h2>
+
+                <p>
+                    A shared spacing scale creates consistent gaps,
+                    padding, and margins throughout the publication.
+                </p>
+            </div>
+
+            <div class="spacing-list">
+                <article class="spacing-token">
+                    <div class="spacing-bar spacing-bar--xs"></div>
+
+                    <div>
+                        <h3>Extra Small</h3>
+                        <code>--space-xs: 0.5rem</code>
+                    </div>
+                </article>
+
+                <article class="spacing-token">
+                    <div class="spacing-bar spacing-bar--sm"></div>
+
+                    <div>
+                        <h3>Small</h3>
+                        <code>--space-sm: 0.75rem</code>
+                    </div>
+                </article>
+
+                <article class="spacing-token">
+                    <div class="spacing-bar spacing-bar--md"></div>
+
+                    <div>
+                        <h3>Medium</h3>
+                        <code>--space-md: 1.5rem</code>
+                    </div>
+                </article>
+
+                <article class="spacing-token">
+                    <div class="spacing-bar spacing-bar--lg"></div>
+
+                    <div>
+                        <h3>Large</h3>
+                        <code>--space-lg: 3rem</code>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="token-section" aria-labelledby="application-heading">
+            <div class="section-heading">
+                <p class="section-number">04</p>
+                <h2 id="application-heading">Editorial Application</h2>
+
+                <p>
+                    This sample article preview demonstrates how the
+                    design tokens can work together in a future story.
+                </p>
+            </div>
+
+            <article class="story-preview">
+                <p class="story-category">Island Journal</p>
+
+                <h2>A Quiet Afternoon on Bainbridge Island</h2>
+
+                <p class="story-summary">
+                    A short ferry ride from downtown Seattle leads to
+                    forest paths, waterfront views, independent shops,
+                    and an unhurried afternoon away from the city.
+                </p>
+
+                <a href="#application-heading">
+                    Read the future journal
+                </a>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            The Cascadia Journal &middot; Capstone Project &middot;
+            Week 02
+        </p>
+    </footer>
+</body>
+</html>
