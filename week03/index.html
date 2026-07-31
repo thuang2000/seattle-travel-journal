@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Week 03 structural layout wireframe for The Cascadia Journal, a responsive editorial travel publication about Seattle and the Pacific Northwest."
+    >
+
+    <title>Week 03 Layout Frame | The Cascadia Journal</title>
+
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="../">
+            The Cascadia Journal
+        </a>
+
+        <nav class="primary-navigation" aria-label="Primary navigation">
+            <ul>
+                <li>
+                    <a href="#stories">Stories</a>
+                </li>
+
+                <li>
+                    <a href="#destinations">Destinations</a>
+                </li>
+
+                <li>
+                    <a href="#guides">Travel Guides</a>
+                </li>
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-frame" aria-label="Editorial page layout">
+        <main id="stories" class="content-hub">
+            <header class="page-heading">
+                <p class="eyebrow">Week 03 Layout Wireframe</p>
+
+                <h1>Editorial Story Area</h1>
+            </header>
+
+            <section
+                id="destinations"
+                class="featured-story"
+                aria-labelledby="featured-heading"
+            >
+                <header>
+                    <p class="zone-label">Primary Feature Zone</p>
+
+                    <h2 id="featured-heading">
+                        Featured Travel Story
+                    </h2>
+                </header>
+
+                <figure class="media-frame">
+                    <figcaption>
+                        Featured image area
+                    </figcaption>
+                </figure>
+
+                <footer class="story-meta">
+                    <span>Category</span>
+                    <span>Reading time</span>
+                    <span>Publication date</span>
+                </footer>
+            </section>
+
+            <section
+                id="guides"
+                class="story-grid"
+                aria-labelledby="latest-heading"
+            >
+                <header class="section-heading">
+                    <p class="zone-label">Supporting Content Zone</p>
+
+                    <h2 id="latest-heading">
+                        Latest Travel Journals
+                    </h2>
+                </header>
+
+                <article class="story-card">
+                    <figure class="card-media">
+                        <figcaption>
+                            Story image
+                        </figcaption>
+                    </figure>
+
+                    <header>
+                        <p class="card-category">Destination</p>
+                        <h3>Travel Journal Card</h3>
+                    </header>
+                </article>
+
+                <article class="story-card">
+                    <figure class="card-media">
+                        <figcaption>
+                            Story image
+                        </figcaption>
+                    </figure>
+
+                    <header>
+                        <p class="card-category">Destination</p>
+                        <h3>Travel Journal Card</h3>
+                    </header>
+                </article>
+
+                <article class="story-card">
+                    <figure class="card-media">
+                        <figcaption>
+                            Story image
+                        </figcaption>
+                    </figure>
+
+                    <header>
+                        <p class="card-category">Destination</p>
+                        <h3>Travel Journal Card</h3>
+                    </header>
+                </article>
+            </section>
+        </main>
+
+        <aside class="side-rail" aria-labelledby="related-heading">
+            <header>
+                <p class="zone-label">Secondary Side Rail</p>
+
+                <h2 id="related-heading">
+                    Related Articles
+                </h2>
+            </header>
+
+            <nav aria-label="Related article links">
+                <ul class="related-list">
+                    <li>
+                        <a href="#related-story-one">
+                            Related story position
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#related-story-two">
+                            Related story position
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#related-story-three">
+                            Related story position
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <section
+                class="newsletter-frame"
+                aria-labelledby="newsletter-heading"
+            >
+                <header>
+                    <p class="zone-label">Utility Zone</p>
+
+                    <h2 id="newsletter-heading">
+                        Newsletter Signup
+                    </h2>
+                </header>
+
+                <form class="newsletter-form">
+                    <label for="email">
+                        Email address
+                    </label>
+
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        autocomplete="email"
+                        placeholder="reader@example.com"
+                    >
+
+                    <button type="submit">
+                        Subscribe
+                    </button>
+                </form>
+            </section>
+        </aside>
+    </section>
+
+    <footer id="about" class="site-footer">
+        <p>
+            The Cascadia Journal
+        </p>
+
+        <nav aria-label="Secondary navigation">
+            <ul>
+                <li>
+                    <a href="../">Project Milestones</a>
+                </li>
+
+                <li>
+                    <a href="../week02/">Design System</a>
+                </li>
+            </ul>
+        </nav>
+
+        <p>
+            Week 03 Structural Layout
+        </p>
+    </footer>
+</body>
+</html>
