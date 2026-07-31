@@ -1,0 +1,614 @@
+/*
+    The Cascadia Journal
+    Week 03 Structural Layout Frame
+
+    Archetype:
+    B — Modern Editorial / Tech Publication
+
+    Week 03 goal:
+    Create the semantic page skeleton without final article content.
+*/
+
+
+/* ==================================================
+   CASCADE LAYER ORDER
+   ================================================== */
+
+@layer reset, tokens, base, layout, components, responsive;
+
+
+/* ==================================================
+   RESET
+   ================================================== */
+
+@layer reset {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body,
+    h1,
+    h2,
+    h3,
+    p,
+    ul,
+    figure {
+        margin: 0;
+    }
+
+    ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    button,
+    input {
+        font: inherit;
+    }
+}
+
+
+/* ==================================================
+   DESIGN TOKENS COPIED FROM WEEK 02
+   ================================================== */
+
+@layer tokens {
+    :root {
+        /*
+            LIGHT MODE COLOR TOKENS
+        */
+
+        --color-primary: oklch(51% 0.12 42);
+        --color-secondary: oklch(42% 0.07 145);
+
+        --color-background: oklch(97% 0.02 85);
+        --color-surface: oklch(93% 0.035 78);
+        --color-surface-strong: oklch(87% 0.05 72);
+
+        --color-text: oklch(25% 0.035 45);
+        --color-text-muted: oklch(42% 0.05 45);
+
+        --color-border: oklch(78% 0.04 72);
+        --color-focus: oklch(62% 0.15 65);
+
+        /*
+            TYPOGRAPHY TOKENS
+        */
+
+        --font-display:
+            Georgia,
+            "Times New Roman",
+            serif;
+
+        --font-body:
+            Arial,
+            Helvetica,
+            sans-serif;
+
+        --font-code:
+            "Courier New",
+            Courier,
+            monospace;
+
+        --size-base: 1rem;
+
+        --size-heading-md:
+            clamp(
+                1.35rem,
+                1.16rem + 0.82vw,
+                2rem
+            );
+
+        --size-heading-lg:
+            clamp(
+                1.75rem,
+                1.31rem + 1.88vw,
+                3rem
+            );
+
+        /*
+            SPACING TOKENS
+        */
+
+        --space-xs: 0.5rem;
+        --space-sm: 0.75rem;
+        --space-md: 1.5rem;
+        --space-lg: 3rem;
+        --space-xl: 5rem;
+
+        /*
+            LAYOUT TOKENS
+        */
+
+        --content-width: 78rem;
+        --reading-width: 65ch;
+        --side-rail-min: 15rem;
+        --side-rail-max: 20rem;
+
+        --border-thin: 0.0625rem;
+        --border-thick: 0.25rem;
+
+        --radius-sm: 0.25rem;
+        --radius-md: 0.5rem;
+    }
+
+    /*
+        DARK MODE COLOR TOKENS
+    */
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --color-primary: oklch(72% 0.11 55);
+            --color-secondary: oklch(72% 0.08 145);
+
+            --color-background: oklch(20% 0.025 45);
+            --color-surface: oklch(25% 0.035 45);
+            --color-surface-strong: oklch(31% 0.045 48);
+
+            --color-text: oklch(92% 0.025 80);
+            --color-text-muted: oklch(74% 0.035 80);
+
+            --color-border: oklch(42% 0.04 55);
+            --color-focus: oklch(78% 0.14 75);
+        }
+    }
+}
+
+
+/* ==================================================
+   BASE ELEMENTS
+   ================================================== */
+
+@layer base {
+    body {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100vh;
+        min-height: 100dvh;
+
+        background-color: var(--color-background);
+        color: var(--color-text);
+
+        font-family: var(--font-body);
+        font-size: var(--size-base);
+        line-height: 1.6;
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-family: var(--font-display);
+        line-height: 1.1;
+        text-wrap: balance;
+    }
+
+    h1 {
+        font-size: var(--size-heading-lg);
+    }
+
+    h2 {
+        font-size: var(--size-heading-md);
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    a {
+        color: var(--color-primary);
+        text-underline-offset: 0.2em;
+    }
+
+    a:hover {
+        text-decoration-thickness: 0.15em;
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+        border-radius: var(--radius-sm);
+        outline: 0.2rem solid var(--color-focus);
+        outline-offset: 0.2rem;
+    }
+}
+
+
+/* ==================================================
+   PRIMARY PAGE LAYOUT
+   ================================================== */
+
+@layer layout {
+    .site-header {
+        position: sticky;
+        z-index: 10;
+        top: 0;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-md);
+
+        padding:
+            var(--space-sm)
+            max(
+                var(--space-md),
+                calc((100% - var(--content-width)) / 2)
+            );
+
+        border-bottom:
+            var(--border-thin)
+            solid
+            var(--color-border);
+
+        background-color: var(--color-surface);
+    }
+
+    .page-frame {
+        display: grid;
+
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(
+                var(--side-rail-min),
+                var(--side-rail-max)
+            );
+
+        gap: var(--space-lg);
+
+        width: min(
+            calc(100% - (var(--space-md) * 2)),
+            var(--content-width)
+        );
+
+        margin-inline: auto;
+        padding-block: var(--space-lg);
+    }
+
+    .content-hub {
+        min-width: 0;
+    }
+
+    .side-rail {
+        min-width: 0;
+    }
+
+    .site-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-md);
+
+        padding:
+            var(--space-md)
+            max(
+                var(--space-md),
+                calc((100% - var(--content-width)) / 2)
+            );
+
+        border-top:
+            var(--border-thin)
+            solid
+            var(--color-border);
+
+        background-color: var(--color-surface);
+    }
+}
+
+
+/* ==================================================
+   COMPONENTS
+   ================================================== */
+
+@layer components {
+    .brand {
+        color: var(--color-text);
+        font-family: var(--font-display);
+        font-size: 1.3rem;
+        font-weight: bold;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    .primary-navigation ul,
+    .site-footer nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--space-md);
+    }
+
+    .primary-navigation a,
+    .site-footer a {
+        font-weight: bold;
+    }
+
+    .page-heading {
+        margin-bottom: var(--space-lg);
+        padding-bottom: var(--space-md);
+
+        border-bottom:
+            var(--border-thin)
+            solid
+            var(--color-border);
+    }
+
+    .page-heading h1 {
+        margin-top: var(--space-xs);
+    }
+
+    .eyebrow,
+    .zone-label,
+    .card-category {
+        color: var(--color-primary);
+        font-size: 0.75rem;
+        font-weight: bold;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+    }
+
+    .featured-story {
+        display: grid;
+        gap: var(--space-md);
+
+        margin-bottom: var(--space-lg);
+        padding: var(--space-md);
+
+        border:
+            var(--border-thin)
+            solid
+            var(--color-border);
+
+        border-top:
+            var(--border-thick)
+            solid
+            var(--color-primary);
+
+        background-color: var(--color-surface);
+    }
+
+    .featured-story h2,
+    .section-heading h2,
+    .side-rail h2,
+    .newsletter-frame h2 {
+        margin-top: var(--space-xs);
+    }
+
+    .media-frame {
+        display: grid;
+        min-height: clamp(14rem, 35vw, 28rem);
+        place-items: center;
+
+        border:
+            var(--border-thin)
+            dashed
+            var(--color-text-muted);
+
+        background-color: var(--color-surface-strong);
+        color: var(--color-text-muted);
+    }
+
+    .story-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--space-md);
+
+        color: var(--color-text-muted);
+        font-size: 0.9rem;
+    }
+
+    .story-grid {
+        display: grid;
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0, 1fr)
+            );
+
+        gap: var(--space-md);
+    }
+
+    .section-heading {
+        grid-column: 1 / -1;
+        margin-bottom: var(--space-sm);
+    }
+
+    .story-card {
+        display: grid;
+        gap: var(--space-sm);
+
+        min-width: 0;
+        padding: var(--space-sm);
+
+        border:
+            var(--border-thin)
+            solid
+            var(--color-border);
+
+        background-color: var(--color-surface);
+    }
+
+    .story-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .card-media {
+        display: grid;
+        min-height: 10rem;
+        place-items: center;
+
+        border:
+            var(--border-thin)
+            dashed
+            var(--color-text-muted);
+
+        background-color: var(--color-surface-strong);
+        color: var(--color-text-muted);
+    }
+
+    .story-card h3 {
+        margin-top: var(--space-xs);
+    }
+
+    .side-rail {
+        align-self: start;
+        position: sticky;
+        top: calc(4rem + var(--space-md));
+
+        display: grid;
+        gap: var(--space-lg);
+
+        padding: var(--space-md);
+
+        border:
+            var(--border-thin)
+            solid
+            var(--color-border);
+
+        background-color: var(--color-surface);
+    }
+
+    .related-list {
+        display: grid;
+        gap: var(--space-sm);
+    }
+
+    .related-list li {
+        padding-bottom: var(--space-sm);
+
+        border-bottom:
+            var(--border-thin)
+            solid
+            var(--color-border);
+    }
+
+    .newsletter-frame {
+        padding-top: var(--space-md);
+
+        border-top:
+            var(--border-thick)
+            solid
+            var(--color-secondary);
+    }
+
+    .newsletter-form {
+        display: grid;
+        gap: var(--space-sm);
+        margin-top: var(--space-md);
+    }
+
+    .newsletter-form label {
+        font-weight: bold;
+    }
+
+    .newsletter-form input {
+        width: 100%;
+        min-width: 0;
+        padding: var(--space-sm);
+
+        border:
+            var(--border-thin)
+            solid
+            var(--color-border);
+
+        border-radius: var(--radius-sm);
+        background-color: var(--color-background);
+        color: var(--color-text);
+    }
+
+    .newsletter-form button {
+        padding: var(--space-sm) var(--space-md);
+
+        border:
+            var(--border-thin)
+            solid
+            var(--color-primary);
+
+        border-radius: var(--radius-sm);
+        background-color: var(--color-primary);
+        color: var(--color-background);
+
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .newsletter-form button:hover {
+        filter: brightness(1.1);
+    }
+}
+
+
+/* ==================================================
+   RESPONSIVE LAYOUT
+   ================================================== */
+
+@layer responsive {
+    /*
+        At medium widths, the sidebar moves below the main content.
+
+        This prevents the sidebar from becoming too narrow and avoids
+        forcing the two-column grid beyond the viewport width.
+    */
+
+    @media (max-width: 56rem) {
+        .site-header {
+            position: static;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .page-frame {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .side-rail {
+            position: static;
+        }
+    }
+
+    /*
+        At small widths, card columns and footer items stack vertically.
+    */
+
+    @media (max-width: 38rem) {
+        .site-header,
+        .site-footer {
+            align-items: flex-start;
+        }
+
+        .primary-navigation ul,
+        .site-footer,
+        .site-footer nav ul {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .story-grid {
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .story-card:last-child {
+            grid-column: auto;
+        }
+
+        .story-meta {
+            flex-direction: column;
+            gap: var(--space-xs);
+        }
+    }
+
+    /*
+        Reduce motion for users who request it.
+    */
+
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+}
