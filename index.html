@@ -10,7 +10,7 @@
 
     <meta
         name="description"
-        content="The Cascadia Journal is a seven-week capstone project exploring travel destinations and outdoor experiences near Seattle."
+        content="The Cascadia Journal is a multi-week capstone project exploring travel destinations and outdoor experiences near Seattle."
     >
 
     <title>The Cascadia Journal | Capstone Project</title>
@@ -20,21 +20,31 @@
             --color-background: oklch(97% 0.02 85);
             --color-surface: oklch(93% 0.035 78);
             --color-text: oklch(25% 0.035 45);
+            --color-text-muted: oklch(42% 0.05 45);
             --color-primary: oklch(51% 0.12 42);
             --color-border: oklch(78% 0.04 72);
 
-            --font-serif: Georgia, "Times New Roman", serif;
-            --font-sans: Arial, Helvetica, sans-serif;
+            --font-serif:
+                Georgia,
+                "Times New Roman",
+                serif;
 
+            --font-sans:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            --space-xs: 0.5rem;
             --space-sm: 0.75rem;
             --space-md: 1.5rem;
             --space-lg: 3rem;
 
-            --size-title: clamp(
-                1.75rem,
-                1.31rem + 1.88vw,
-                3rem
-            );
+            --size-title:
+                clamp(
+                    1.75rem,
+                    1.31rem + 1.88vw,
+                    3rem
+                );
         }
 
         @media (prefers-color-scheme: dark) {
@@ -42,12 +52,15 @@
                 --color-background: oklch(20% 0.025 45);
                 --color-surface: oklch(25% 0.035 45);
                 --color-text: oklch(92% 0.025 80);
+                --color-text-muted: oklch(74% 0.035 80);
                 --color-primary: oklch(72% 0.11 55);
                 --color-border: oklch(42% 0.04 55);
             }
         }
 
-        * {
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
         }
 
@@ -60,50 +73,80 @@
         }
 
         main {
-            width: min(90%, 60rem);
+            width: min(
+                calc(100% - (var(--space-md) * 2)),
+                60rem
+            );
+
             margin-inline: auto;
             padding-block: var(--space-lg);
+        }
+
+        h1,
+        h2 {
+            font-family: var(--font-serif);
+            line-height: 1.1;
+            text-wrap: balance;
         }
 
         h1 {
             max-width: 15ch;
             margin-block: 0 var(--space-md);
-            font-family: var(--font-serif);
             font-size: var(--size-title);
-            line-height: 1.05;
         }
 
         .introduction {
             max-width: 65ch;
             margin-bottom: var(--space-lg);
+            color: var(--color-text-muted);
             font-size: 1.1rem;
+        }
+
+        .milestone-list {
+            display: grid;
+            gap: var(--space-md);
         }
 
         .milestone {
             padding: var(--space-md);
-            border: 1px solid var(--color-border);
-            border-left: 0.4rem solid var(--color-primary);
+
+            border:
+                0.0625rem
+                solid
+                var(--color-border);
+
+            border-inline-start:
+                0.4rem
+                solid
+                var(--color-primary);
+
             border-radius: 0.4rem;
             background-color: var(--color-surface);
         }
 
         .milestone h2 {
             margin-top: 0;
-            font-family: var(--font-serif);
+        }
+
+        .milestone p {
+            max-width: 65ch;
+            color: var(--color-text-muted);
         }
 
         .milestone a {
             display: inline-block;
+            margin-top: var(--space-sm);
             padding: var(--space-sm) var(--space-md);
+
             border-radius: 0.25rem;
             background-color: var(--color-primary);
             color: var(--color-background);
+
             font-weight: bold;
             text-decoration: none;
         }
 
-        .milestone a:hover,
-        .milestone a:focus-visible {
+        .milestone a:hover {
             text-decoration: underline;
         }
 
@@ -129,17 +172,36 @@
             </p>
         </header>
 
-        <section class="milestone" aria-labelledby="week02-heading">
-            <h2 id="week02-heading">Week 02: Design System</h2>
+        <section
+            class="milestone-list"
+            aria-label="Weekly project milestones"
+        >
+            <article class="milestone">
+                <h2>Week 02: Design System</h2>
 
-            <p>
-                Explore the colors, typography, and spacing tokens that
-                will guide the visual design of The Cascadia Journal.
-            </p>
+                <p>
+                    Explore the colors, typography, and spacing tokens
+                    that guide the visual design of The Cascadia Journal.
+                </p>
 
-            <a href="./week02/">
-                View Week 02
-            </a>
+                <a href="./week02/">
+                    View Week 02
+                </a>
+            </article>
+
+            <article class="milestone">
+                <h2>Week 03: Structural Layout</h2>
+
+                <p>
+                    Review the semantic editorial page frame, including
+                    the sticky header, main story area, side rail, and
+                    responsive footer.
+                </p>
+
+                <a href="./week03/">
+                    View Week 03
+                </a>
+            </article>
         </section>
     </main>
 </body>
