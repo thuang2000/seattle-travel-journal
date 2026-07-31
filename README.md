@@ -37,6 +37,24 @@ It includes:
 - CSS custom properties
 - CSS cascade layers
 
+### Week 03: Structural Layout Frame
+
+Week 03 establishes the primary editorial page skeleton without adding
+final article content.
+
+It includes:
+
+- A sticky semantic `<header>`
+- Primary navigation using `<nav>`
+- A centered editorial `<main>` area
+- A secondary `<aside>` side rail
+- A semantic `<footer>`
+- A full-height page frame using CSS Grid
+- A responsive sidebar using `minmax()`
+- Mobile, tablet, and desktop layouts
+- High-contrast keyboard focus indicators
+- Week 02 design tokens reused through CSS variables
+  
 ## AI Tools
 ChatGPT was utilized to assist with this project.
 
@@ -56,12 +74,8 @@ width. Can you write the clamp() property using a mix of rem and
 vw, and break down exactly how the middle viewport-width expression
 is calculated?
 
-## Repository Structure
+Week 03 Prompts:
+Prompt 1 (Drafting Semantic Layout Scaffolding): "I am building a [Insert Chosen Archetype, e.g., Developer Workspace Dashboard] for my capstone project. Write the semantic HTML5 layout wrapper utilizing , , , , and . Then, write the CSS Grid rules needed to position these zones so the layout occupies exactly 100% of the viewport height. Use low-specificity CSS class selectors and bind the padding, gaps, and background colors to my existing CSS variables."
 
-```text
-seattle-travel-journal/
-├── index.html
-├── README.md
-└── week02/
-    ├── index.html
-    └── styles.css
+Prompt 2 (Grid Frame Debugging): [Paste your HTML & CSS draft] "My aside element is collapsing to zero width when the screen gets narrow, and it is causing a horizontal scrollbar. Can you explain why this is happening within the CSS Grid formatting context and how I can set a responsive minimum width constraint on my sidebar using minmax()?"
+
