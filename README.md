@@ -70,6 +70,23 @@ It includes:
 - `grid-auto-flow: dense` to reduce empty grid spaces
 - Week 02 spacing and OKLCH color tokens
 - Responsive card content without overflow
+
+### Week 05: CSS Architecture Refactor
+
+Week 05 reorganizes the Week 04 stylesheet without intentionally
+changing the visual design.
+
+It includes:
+
+- Four ordered CSS Cascade Layers
+- `reset`, `base`, `layout`, and `components` architecture
+- Native CSS Nesting
+- Nested component child selectors
+- Native `&:hover` and `&:focus-visible` states
+- Nested responsive media queries
+- Existing Week 02 design tokens
+- Existing Week 03 structural layout
+- Existing Week 04 asymmetric grid
   
 ## AI Tools
 ChatGPT was utilized to assist with this project.
@@ -113,3 +130,16 @@ Can you analyze my grid code and show me how to use CSS Grid's
 auto-placement rules, like grid-auto-flow: dense, to prevent gaps
 while preserving hierarchy?
 
+
+Week 05 Cascade Layer Prompt:
+
+Here is my CSS file. I want to modernize my code by sorting these
+styles into four cascade layers: reset, base, layout, and components.
+Can you help me group my existing rules into these layer blocks,
+explaining which layer each rule belongs to and why?
+
+Week 05 Native Nesting Prompt:
+
+Analyze my CSS component styles. Help me refactor this code to use
+native CSS Nesting, making sure parent-child relationships are clean
+and pseudo-elements/pseudo-classes are set up using the `&` operator.
