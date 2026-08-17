@@ -54,6 +54,22 @@ It includes:
 - Mobile, tablet, and desktop layouts
 - High-contrast keyboard focus indicators
 - Week 02 design tokens reused through CSS variables
+
+### Week 04: Asymmetric Editorial Grid
+
+Week 04 develops the primary editorial content area into an asymmetric
+responsive CSS Grid.
+
+It includes:
+
+- Five travel content cards
+- A featured hero card spanning multiple rows and columns
+- A three-column desktop grid using fractional units
+- Responsive two-column and one-column layouts
+- `minmax()` for flexible grid tracks
+- `grid-auto-flow: dense` to reduce empty grid spaces
+- Week 02 spacing and OKLCH color tokens
+- Responsive card content without overflow
   
 ## AI Tools
 ChatGPT was utilized to assist with this project.
@@ -78,4 +94,22 @@ Week 03 Prompts:
 Prompt 1 (Drafting Semantic Layout Scaffolding): "I am building a [Insert Chosen Archetype, e.g., Developer Workspace Dashboard] for my capstone project. Write the semantic HTML5 layout wrapper utilizing , , , , and . Then, write the CSS Grid rules needed to position these zones so the layout occupies exactly 100% of the viewport height. Use low-specificity CSS class selectors and bind the padding, gaps, and background colors to my existing CSS variables."
 
 Prompt 2 (Grid Frame Debugging): [Paste your HTML & CSS draft] "My aside element is collapsing to zero width when the screen gets narrow, and it is causing a horizontal scrollbar. Can you explain why this is happening within the CSS Grid formatting context and how I can set a responsive minimum width constraint on my sidebar using minmax()?"
+
+Week 04 Prompts:
+Asymmetric Grid Prompt
+
+I have a main content area containing 5 cards. I want to build a CSS
+Grid that is asymmetric. On desktop, I want a 3-column layout where
+the first card is a "hero" card that spans 2 columns and 2 rows, while
+the rest span 1 column. Write the CSS using fractional units and
+explicit grid spans. Make sure it scales nicely down to a single
+column on mobile viewports.
+
+Grid Gap Prompt
+
+When I shrink my viewport to tablet sizes, my asymmetric grid leaves
+a large empty space in the second row because of the card span rules.
+Can you analyze my grid code and show me how to use CSS Grid's
+auto-placement rules, like grid-auto-flow: dense, to prevent gaps
+while preserving hierarchy?
 
