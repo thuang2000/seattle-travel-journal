@@ -143,3 +143,39 @@ Week 05 Native Nesting Prompt:
 Analyze my CSS component styles. Help me refactor this code to use
 native CSS Nesting, making sure parent-child relationships are clean
 and pseudo-elements/pseudo-classes are set up using the `&` operator.
+
+### Week 06: Component-Level Container Queries
+
+Week 06 adds component-level responsive behavior to the reusable travel
+cards.
+
+It includes:
+
+- Named CSS container contexts
+- `container-type: inline-size`
+- CSS Container Queries
+- Horizontal cards in wide containers
+- Vertical cards in narrow containers
+- The same reusable card component in the main grid and sidebar
+- Container query width units (`cqw`)
+- Existing Cascade Layers
+- Existing native CSS Nesting
+- Existing design-system variables
+- Page-level media queries kept separate from component-level queries
+
+### Week 06 Container Query Prompt
+
+I have a reusable card element called `.card` containing an image
+and some text. I want to convert this card's styling to use CSS
+Container Queries instead of Media Queries. If its parent element is
+wider than 450px, the card should display horizontally. If its parent
+is narrower, it should stack vertically. Can you write the HTML
+structure and the nested CSS using `@container`?
+
+### Week 06 Container Layout Refactoring Prompt
+
+In my project, I have cards in my main asymmetric grid and cards in
+my sidebar aside. They currently look messy because the sidebar cards
+are being squished. Can you help me set `container-type: inline-size`
+on the parent elements of these card slots and show me how to refactor
+the cards to self-adjust perfectly?
