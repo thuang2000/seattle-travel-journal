@@ -179,3 +179,39 @@ my sidebar aside. They currently look messy because the sidebar cards
 are being squished. Can you help me set `container-type: inline-size`
 on the parent elements of these card slots and show me how to refactor
 the cards to self-adjust perfectly?
+
+### Week 07: Motion & Interactions
+
+Week 07 adds polished CSS-only motion and interaction feedback to the
+editorial interface.
+
+It includes:
+
+- High-performance transform and opacity transitions
+- Hover, active, and keyboard focus states
+- Card interactions using `:focus-within`
+- High-contrast `:focus-visible` rings
+- A CSS-only reading progress indicator
+- `animation-timeline: scroll(root)`
+- Transform-based progress animation
+- Reduced-motion accessibility support
+- Existing Container Queries
+- Existing native CSS Nesting
+- Existing Cascade Layers
+
+### Week 07 High-Performance Hover Prompt
+
+I have a card component called `.card`. I want to design a subtle
+micro-interaction when a user hovers or tabs onto it. The card should
+scale up very slightly (1.02x) and drop a clean shadow. Show me how to
+write this transition using only CSS transforms and opacity so that
+it is hardware-accelerated. Also, include an accessible
+`:focus-visible` ring.
+
+### Week 07 Scroll-Driven Animation Prompt
+
+I want to create a scroll-reveal animation for my layout cards using
+native modern CSS scroll-driven animations. As each card enters the
+viewport, it should fade from opacity 0 to 1 and slide up by 20px.
+Can you write the CSS using `animation-timeline: view()` and explain
+how the view-timeline bounds are determined?
