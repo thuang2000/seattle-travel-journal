@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Week 07 micro-interactions and CSS scroll-driven animations for The Cascadia Journal, a responsive Pacific Northwest travel publication."
+    >
+
+    <title>Week 07 Motion & Interactions | The Cascadia Journal</title>
+
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div
+        class="scroll-progress-bar"
+        aria-hidden="true"
+    ></div>
+
+    <header class="site-header">
+        <a class="brand" href="../">
+            The Cascadia Journal
+        </a>
+
+        <nav
+            class="primary-navigation"
+            aria-label="Primary navigation"
+        >
+            <ul>
+                <li>
+                    <a href="#stories">
+                        Stories
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#destinations">
+                        Destinations
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#guides">
+                        Travel Guides
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        About
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="page-frame">
+        <article id="stories" class="content-hub">
+            <header class="page-heading">
+                <p class="eyebrow">
+                    Week 07 Motion & Interactions
+                </p>
+
+                <h1>
+                    Journeys Around the Pacific Northwest
+                </h1>
+
+                <p class="page-introduction">
+                    Responsive travel stories enhanced with subtle
+                    micro-interactions and a CSS-only reading progress
+                    indicator.
+                </p>
+            </header>
+
+            <section
+                id="destinations"
+                class="story-grid"
+                aria-labelledby="story-grid-heading"
+            >
+                <header class="section-heading">
+                    <p class="zone-label">
+                        Featured Stories
+                    </p>
+
+                    <h2 id="story-grid-heading">
+                        Explore the Region
+                    </h2>
+                </header>
+
+                <div class="card-slot card-slot--hero">
+                    <article
+                        id="story-bainbridge"
+                        class="story-card story-card--hero"
+                    >
+                        <figure class="story-media">
+                            <figcaption>
+                                Hero image area
+                            </figcaption>
+                        </figure>
+
+                        <div class="story-card__content">
+                            <header class="story-card__header">
+                                <p class="card-category">
+                                    Island Escape
+                                </p>
+
+                                <h2>
+                                    <a
+                                        class="story-card__link"
+                                        href="#story-bainbridge"
+                                    >
+                                        A Slow Weekend on Bainbridge Island
+                                    </a>
+                                </h2>
+                            </header>
+
+                            <p class="story-summary">
+                                A ferry ride from downtown Seattle leads
+                                to waterfront views, forest trails,
+                                local shops, and a quieter pace across
+                                Puget Sound.
+                            </p>
+
+                            <footer class="story-meta">
+                                <span>
+                                    8 min read
+                                </span>
+
+                                <span>
+                                    Featured Journal
+                                </span>
+                            </footer>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="card-slot">
+                    <article
+                        id="story-rainier"
+                        class="story-card"
+                    >
+                        <figure class="story-media">
+                            <figcaption>
+                                Story image area
+                            </figcaption>
+                        </figure>
+
+                        <div class="story-card__content">
+                            <header class="story-card__header">
+                                <p class="card-category">
+                                    Mountain Day Trip
+                                </p>
+
+                                <h3>
+                                    <a
+                                        class="story-card__link"
+                                        href="#story-rainier"
+                                    >
+                                        A Day at Mount Rainier
+                                    </a>
+                                </h3>
+                            </header>
+
+                            <p class="story-summary">
+                                Alpine scenery, scenic roads, and
+                                accessible viewpoints make Mount Rainier
+                                a classic trip from Seattle.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="card-slot">
+                    <article
+                        id="story-whidbey"
+                        class="story-card"
+                    >
+                        <figure class="story-media">
+                            <figcaption>
+                                Story image area
+                            </figcaption>
+                        </figure>
+
+                        <div class="story-card__content">
+                            <header class="story-card__header">
+                                <p class="card-category">
+                                    Coastal Journal
+                                </p>
+
+                                <h3>
+                                    <a
+                                        class="story-card__link"
+                                        href="#story-whidbey"
+                                    >
+                                        Exploring Whidbey Island
+                                    </a>
+                                </h3>
+                            </header>
+
+                            <p class="story-summary">
+                                Small waterfront towns, open farmland,
+                                and dramatic coastal views shape a
+                                relaxed island route.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <div
+                    id="guides"
+                    class="card-slot"
+                >
+                    <article
+                        id="story-snoqualmie"
+                        class="story-card"
+                    >
+                        <figure class="story-media">
+                            <figcaption>
+                                Story image area
+                            </figcaption>
+                        </figure>
+
+                        <div class="story-card__content">
+                            <header class="story-card__header">
+                                <p class="card-category">
+                                    Weekend Guide
+                                </p>
+
+                                <h3>
+                                    <a
+                                        class="story-card__link"
+                                        href="#story-snoqualmie"
+                                    >
+                                        Hiking Near Snoqualmie Pass
+                                    </a>
+                                </h3>
+                            </header>
+
+                            <p class="story-summary">
+                                Mountain trails and alpine lakes are
+                                within easy reach of Seattle along
+                                Interstate 90.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="card-slot">
+                    <article
+                        id="story-port-townsend"
+                        class="story-card"
+                    >
+                        <figure class="story-media">
+                            <figcaption>
+                                Story image area
+                            </figcaption>
+                        </figure>
+
+                        <div class="story-card__content">
+                            <header class="story-card__header">
+                                <p class="card-category">
+                                    City Escape
+                                </p>
+
+                                <h3>
+                                    <a
+                                        class="story-card__link"
+                                        href="#story-port-townsend"
+                                    >
+                                        An Afternoon in Port Townsend
+                                    </a>
+                                </h3>
+                            </header>
+
+                            <p class="story-summary">
+                                Victorian architecture, waterfront
+                                streets, and independent shops create
+                                a distinctive destination on the
+                                Olympic Peninsula.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </article>
+
+        <aside
+            class="side-rail"
+            aria-labelledby="related-heading"
+        >
+            <header>
+                <p class="zone-label">
+                    From the Journal
+                </p>
+
+                <h2 id="related-heading">
+                    Related Stories
+                </h2>
+            </header>
+
+            <nav aria-label="Related article links">
+                <ul class="related-list">
+                    <li>
+                        <a href="#story-bainbridge">
+                            Ferry trips from Seattle
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#story-snoqualmie">
+                            Weekend hiking guides
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#stories">
+                            Pacific Northwest journals
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <section
+                class="sidebar-card-area"
+                aria-labelledby="sidebar-card-heading"
+            >
+                <header>
+                    <p class="zone-label">
+                        Container Query Demo
+                    </p>
+
+                    <h2 id="sidebar-card-heading">
+                        Sidebar Story
+                    </h2>
+                </header>
+
+                <div class="card-slot">
+                    <article
+                        id="story-discovery-park"
+                        class="story-card"
+                    >
+                        <figure class="story-media">
+                            <figcaption>
+                                Story image area
+                            </figcaption>
+                        </figure>
+
+                        <div class="story-card__content">
+                            <header class="story-card__header">
+                                <p class="card-category">
+                                    Nearby Escape
+                                </p>
+
+                                <h3>
+                                    <a
+                                        class="story-card__link"
+                                        href="#story-discovery-park"
+                                    >
+                                        Discovery Park
+                                    </a>
+                                </h3>
+                            </header>
+
+                            <p class="story-summary">
+                                Forest trails and Puget Sound views
+                                within Seattle.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section
+                class="newsletter-frame"
+                aria-labelledby="newsletter-heading"
+            >
+                <header>
+                    <p class="zone-label">
+                        Newsletter
+                    </p>
+
+                    <h2 id="newsletter-heading">
+                        Follow the Journey
+                    </h2>
+                </header>
+
+                <form class="newsletter-form">
+                    <label for="email">
+                        Email address
+                    </label>
+
+                    <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        autocomplete="email"
+                        placeholder="reader@example.com"
+                        required
+                    >
+
+                    <button type="submit">
+                        Subscribe
+                    </button>
+                </form>
+            </section>
+        </aside>
+    </main>
+
+    <footer id="about" class="site-footer">
+        <p>
+            The Cascadia Journal
+        </p>
+
+        <nav aria-label="Secondary navigation">
+            <ul>
+                <li>
+                    <a href="../">
+                        Project Milestones
+                    </a>
+                </li>
+
+                <li>
+                    <a href="../week06/">
+                        Week 06 Container Queries
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <p>
+            Week 07 Motion & Interactions
+        </p>
+    </footer>
+</body>
+</html>
